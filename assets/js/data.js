@@ -1,4 +1,4 @@
-let movieArray = [
+let movieArray1 = [
   {
     adult: false,
     backdrop_path: '',
