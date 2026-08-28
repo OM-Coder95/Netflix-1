@@ -1,12 +1,16 @@
 const cl = console.log;
 
 const movieContainer = document.getElementById("movieContainer");
+const showModelBtn = document.getElementById("showModelBtn");
+const backdrop = document.getElementById("backdrop");
+const movieModal = document.getElementById("movieModal");
+const closeIcon = document.getElementById("closeIcon");
+const closeBtn = document.getElementById("closeBtn");
 
-let jsonArr = localStorage.getItem("movieArray");
+let movieArray = movieArray1;
 
-let movieArray = jsonArr ? JSON.parse(jsonArr) : [];
+localStorage.setItem("movieArray", JSON.stringify(movieArray));
 
-cl(movieArray);
 // Functions
 
 // showOnUI
@@ -65,3 +69,26 @@ function showOnUI(arr) {
 }
 
 showOnUI(movieArray);
+
+// show hide 
+function showHideMovieModel(event) {
+    backdrop.classList.toggle("active")
+    movieModal.classList.toggle("active")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+showModelBtn.addEventListener("click", showHideMovieModel)
+closeIcon.addEventListener("click", showHideMovieModel)
+closeBtn.addEventListener("click", showHideMovieModel)
+backdrop.addEventListener("click", showHideMovieModel)
